@@ -1,0 +1,36 @@
+form {
+  font-family: Arial, sans-serif;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"] {
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #006DFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.small {
+  font-size: 0.8em;
+  color: gray;
+}
