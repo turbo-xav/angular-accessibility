@@ -10,8 +10,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { AccessibleDialogComponent } from '../accessible-dialog/accessible-dialog.component';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatTabGroup } from '@angular/material/tabs';
 

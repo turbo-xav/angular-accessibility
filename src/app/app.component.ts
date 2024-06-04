@@ -3,12 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AccessibleDialogComponent } from './accessible-dialog/accessible-dialog.component';
 
@@ -26,10 +21,8 @@ import { AccessibleDialogComponent } from './accessible-dialog/accessible-dialog
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {}
 
   handleButtonClick() {
     console.log('Le bouton a été cliqué');
