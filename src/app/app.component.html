@@ -2,18 +2,11 @@
 
 <div tabindex="0" (keydown)="handleButtonClick()" (click)="handleButtonClick()">Div cliquable</div>
 
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill">
-    <mat-label>Nom</mat-label>
-    <input matInput formControlName="name" aria-label="Nom" />
-  </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput formControlName="email" />
-    <mat-error *ngIf="myForm.get('email')?.hasError('email')">Veuillez entrer un email valide</mat-error>
-    <mat-error *ngIf="myForm.get('email')?.hasError('required')">Le champ email est obligatoire</mat-error>
-  </mat-form-field>
 
-  <button mat-raised-button color="accent" type="submit">Submit</button>
-</form>
+<nav>
+  <a [routerLink]="['/component1']" routerLinkActive="active">Component 1</a>
+  <a [routerLink]="['/component2']" routerLinkActive="active">Component 2</a>
+</nav>
+<br />
+<router-outlet></router-outlet>

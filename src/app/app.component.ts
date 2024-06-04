@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,34 +21,18 @@ import { AccessibleDialogComponent } from './accessible-dialog/accessible-dialog
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    RouterLink,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  myForm: FormGroup = this.fb.group({
-    name: [''],
-    email: ['', [Validators.required, Validators.email]],
-  });
+  constructor(private dialog: MatDialog) {}
 
-  constructor(
-    private fb: FormBuilder,
-    private dialog: MatDialog,
-  ) {}
-
-  ngOnInit(): void {
-    this.myForm.valueChanges.subscribe(() => {
-      console.warn(this.myForm.controls['email'].errors);
-    });
-  }
-
-  onSubmit() {
-    console.log(this.myForm.value);
-    this.myForm.reset();
-    this.dialog.open(AccessibleDialogComponent);
-  }
+  ngOnInit(): void {}
 
   handleButtonClick() {
     console.log('Le bouton a été cliqué');
+    this.dialog.open(AccessibleDialogComponent);
   }
 }
