@@ -1,6 +1,19 @@
-<h2>TabIndex</h2>
-<p tabindex="0">Pagraphe1</p>
-<p tabindex="1">Pagraphe2</p>
-<p tabindex="3">Pagraphe3</p>
-<p tabindex="2">Pagraphe4</p>
-<p tabindex="0">Pagraphe5</p>
+<h1>Click me</h1>
+
+<div tabindex="0" (keydown)="handleButtonClick()" (click)="handleButtonClick()">Div cliquable</div>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="name" aria-label="Nom" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+    <mat-error *ngIf="myForm.get('email')?.hasError('email')">Veuillez entrer un email valide</mat-error>
+    <mat-error *ngIf="myForm.get('email')?.hasError('required')">Le champ email est obligatoire</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit">Submit</button>
+</form>
