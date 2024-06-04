@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatProgressBar } from '@angular/material/progress-bar';
-import { interval, takeWhile, tap } from 'rxjs';
+import { interval, take, takeUntil, takeWhile, tap } from 'rxjs';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 
@@ -16,7 +16,7 @@ export class Component1Component implements OnInit {
   currentState = 'Loading';
 
   ngOnInit() {
-    interval(100)
+    const sub = interval(100)
       .pipe(
         takeWhile(() => this.progress < 100),
         tap(() => {
