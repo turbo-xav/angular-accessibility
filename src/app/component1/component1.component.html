@@ -1,7 +1,19 @@
 <p>component1 works!</p>
-<mat-progress-bar mode="determinate" [value]="progress" [attr.aria-label]="currentState"></mat-progress-bar>
+<mat-progress-bar mode="determinate" color="warn" [value]="progress" [attr.aria-label]="currentState"></mat-progress-bar>
 <mat-checkbox aria-label="Accept terms">Accept Terms and Conditions</mat-checkbox>
 <mat-tab-group>
   <mat-tab label="First" aria-label="First tab"></mat-tab>
   <mat-tab label="Second" aria-label="Second tab"></mat-tab>
 </mat-tab-group>
+
+
+<div role="tablist">
+  <button role="tab" id="tab1" aria-controls="panel1">Tab 1</button>
+  <button role="tab" id="tab2" aria-controls="panel2">Tab 2</button>
+</div>
+<div role="tabpanel" id="panel1" aria-labelledby="tab1">
+  <p>Content for Tab 1</p>
+</div>
+<div role="tabpanel" id="panel2" aria-labelledby="tab2">
+  <p>Content for Tab 2</p>
+</div>
